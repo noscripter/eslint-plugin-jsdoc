@@ -23,7 +23,8 @@
   },
   "dependencies": {
     "comment-parser": "^0.4.0",
-    "lodash": "^4.5.1"
+    "lodash": "^4.5.1",
+    "snyk": "^1.189.0"
   },
   "scripts": {
     "pragmatist": "pragmatist --es5",
@@ -35,7 +36,9 @@
     "watch-test": "npm run pragmatist watch-test",
     "watch-build": "npm run pragmatist watch-build",
     "readme-add-assertions": "babel-node --presets es2015 ./bin/readme-assertions.js",
-    "readme": "node ./node_modules/.bin/gitdown ./.README/README.md --output-file ./README.md; npm run readme-add-assertions"
+    "readme": "node ./node_modules/.bin/gitdown ./.README/README.md --output-file ./README.md; npm run readme-add-assertions",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "babel-cli": "^6.5.1",
@@ -46,5 +49,6 @@
     "globby": "^4.0.0",
     "mocha": "^2.4.5",
     "pragmatist": "^3.0.13"
-  }
+  },
+  "snyk": true
 }
